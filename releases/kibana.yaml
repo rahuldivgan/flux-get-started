@@ -1,0 +1,15 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: kibana
+  namespace: demo
+  annotations:
+    fluxcd.io/automated: "false"
+    fluxcd.io/tag.chart-image: semver:~4.0
+spec:
+  releaseName: kibana
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: kibana
+    version: 3.2.4
